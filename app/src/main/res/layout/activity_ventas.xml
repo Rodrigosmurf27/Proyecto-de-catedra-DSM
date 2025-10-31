@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    android:background="#f8fafc">
+
+    <!-- Header -->
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="2dp"
+        app:cardCornerRadius="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ventas"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                android:textColor="#1e293b"
+                android:layout_marginBottom="4dp"/>
+
+            <TextView
+                android:id="@+id/headerSubtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cargando ventas..."
+                android:textSize="14sp"
+                android:textColor="#64748b"/>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Contenido principal ocupa el resto (como en activity_main) -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <!-- Loader -->
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="visible"
+            android:indeterminateTint="#6366f1"/>
+
+        <!-- Contenido con KPIs, filtros y lista -->
+        <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="96dp">
+
+                <!-- KPIs -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="20dp">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="4dp"
+                        app:cardElevation="4dp"
+                        app:cardCornerRadius="16dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="16dp"
+                            android:gravity="center">
+
+                            <TextView
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:text="💰"
+                                android:textSize="18sp"
+                                android:gravity="center"
+                                android:background="@drawable/stat_icon_bg"
+                                android:layout_marginBottom="8dp"/>
+
+                            <TextView
+                                android:id="@+id/totalVentasText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="$0.00"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                android:textColor="#1e293b"
+                                android:layout_marginBottom="4dp"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Total Ventas"
+                                android:textSize="12sp"
+                                android:textColor="#64748b"
+                                android:textAlignment="center"/>
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginHorizontal="4dp"
+                        app:cardElevation="4dp"
+                        app:cardCornerRadius="16dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="16dp"
+                            android:gravity="center">
+
+                            <TextView
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:text="📅"
+                                android:textSize="18sp"
+                                android:gravity="center"
+                                android:background="@drawable/stat_icon_bg"
+                                android:layout_marginBottom="8dp"/>
+
+                            <TextView
+                                android:id="@+id/ventasHoyText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="$0.00"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                android:textColor="#1e293b"
+                                android:layout_marginBottom="4dp"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Ventas Hoy"
+                                android:textSize="12sp"
+                                android:textColor="#64748b"
+                                android:textAlignment="center"/>
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="4dp"
+                        app:cardElevation="4dp"
+                        app:cardCornerRadius="16dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="16dp"
+                            android:gravity="center">
+
+                            <TextView
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:text="📦"
+                                android:textSize="18sp"
+                                android:gravity="center"
+                                android:background="@drawable/stat_icon_bg"
+                                android:layout_marginBottom="8dp"/>
+
+                            <TextView
+                                android:id="@+id/totalProductosText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0"
+                                android:textSize="18sp"
+                                android:textStyle="bold"
+                                android:textColor="#1e293b"
+                                android:layout_marginBottom="4dp"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Productos"
+                                android:textSize="12sp"
+                                android:textColor="#64748b"
+                                android:textAlignment="center"/>
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
+
+                <!-- Top producto -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/topProductCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginBottom="20dp"
+                    app:cardElevation="4dp"
+                    app:cardCornerRadius="16dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="20dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="🏆"
+                            android:textSize="32sp"
+                            android:layout_marginEnd="16dp"/>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Producto Más Vendido"
+                                android:textSize="14sp"
+                                android:textColor="#64748b"
+                                android:layout_marginBottom="4dp"/>
+
+                            <TextView
+                                android:id="@+id/topProductName"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Producto"
+                                android:textSize="18sp"
+                                android:textStyle="bold"
+                                android:textColor="#1e293b"
+                                android:layout_marginBottom="2dp"/>
+
+                            <TextView
+                                android:id="@+id/topProductQuantity"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0 unidades vendidas"
+                                android:textSize="14sp"
+                                android:textColor="#059669"
+                                android:textStyle="bold"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Filtros -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="20dp"
+                    android:layout_marginBottom="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Filtrar por marca:"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="#1e293b"
+                        android:layout_marginBottom="12dp"/>
+
+                    <HorizontalScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:scrollbars="none">
+
+                        <com.google.android.material.chip.ChipGroup
+                            android:id="@+id/chipGroup"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:singleSelection="true"
+                            app:chipSpacingHorizontal="8dp" />
+
+                    </HorizontalScrollView>
+                </LinearLayout>
+
+                <!-- Lista -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="20dp"
+                    android:paddingBottom="20dp">
+
+                    <TextView
+                        android:id="@+id/sectionTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Historial de Ventas"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:textColor="#1e293b"
+                        android:layout_marginBottom="16dp"/>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerViewVentas"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:nestedScrollingEnabled="false"/>
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+
+        <!-- Empty state -->
+        <LinearLayout
+            android:id="@+id/emptyStateLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="40dp"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="💰"
+                android:textSize="64sp"
+                android:layout_marginBottom="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No hay ventas"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#1e293b"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Las ventas aparecerán aquí cuando se registren"
+                android:textSize="14sp"
+                android:textColor="#64748b"
+                android:textAlignment="center"/>
+        </LinearLayout>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabAdd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_margin="16dp"
+            android:layout_marginBottom="88dp"
+            android:contentDescription="Agregar nueva venta"
+            android:src="@drawable/ic_add"
+            app:backgroundTint="#6366f1"
+            app:elevation="6dp"
+            app:tint="@android:color/white" />
+    </FrameLayout>
+
+    <!-- Línea divisoria sutil sobre el menú -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/border_color" />
+
+    <!-- Menú inferior (igual que en activity_main) -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="67dp"
+        android:background="@color/surface_color"
+        android:elevation="8dp"
+        app:itemIconTint="@color/bottom_navigation_item_color"
+        app:itemRippleColor="@color/indicator_color"
+        app:itemTextColor="@color/bottom_navigation_item_color"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/menu_bottom_navigation" />
+
+    <!-- Botón Agregar (separado del menú con margen inferior amplio) -->
+</LinearLayout>

@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardView"
+    android:fitsSystemWindows="true"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    app:cardElevation="4dp"
+    app:cardCornerRadius="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="12dp">
+
+            <TextView
+                android:id="@+id/avatarText"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/proveedor_avatar_bg"
+                android:text="P"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_marginEnd="16dp"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/nombreText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Nombre del Proveedor"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="#1e293b"
+                    android:layout_marginBottom="4dp"/>
+
+                <TextView
+                    android:id="@+id/telefonoText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="0000-0000"
+                    android:textSize="14sp"
+                    android:textColor="#6366f1"
+                    android:drawableStart="@drawable/ic_phone"
+                    android:drawablePadding="8dp"
+                    android:gravity="center_vertical"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/callButton"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_marginEnd="4dp"
+                    android:background="@drawable/action_button_call_bg"
+                    android:src="@drawable/ic_call"
+                    android:contentDescription="Llamar"
+                    android:scaleType="centerInside"/>
+
+                <ImageButton
+                    android:id="@+id/emailButton"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_marginEnd="4dp"
+                    android:background="@drawable/action_button_email_bg"
+                    android:src="@drawable/ic_email"
+                    android:contentDescription="Enviar email"
+                    android:scaleType="centerInside"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="12dp">
+
+            <TextView
+                android:id="@+id/emailText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="email@proveedor.com"
+                android:textSize="14sp"
+                android:textColor="#64748b"
+                android:drawableStart="@drawable/ic_email_small"
+                android:drawablePadding="8dp"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="4dp"/>
+
+            <TextView
+                android:id="@+id/direccionText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Dirección del proveedor"
+                android:textSize="14sp"
+                android:textColor="#64748b"
+                android:drawableStart="@drawable/ic_location"
+                android:drawablePadding="8dp"
+                android:gravity="center_vertical"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#f1f5f9"
+            android:layout_marginBottom="12dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="end">
+
+            <ImageButton
+                android:id="@+id/editButton"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/action_button_edit_bg"
+                android:src="@drawable/ic_edit"
+                android:contentDescription="Editar"
+                android:scaleType="centerInside"/>
+
+            <ImageButton
+                android:id="@+id/deleteButton"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:background="@drawable/action_button_delete_bg"
+                android:src="@drawable/ic_delete_small"
+                android:contentDescription="Eliminar"
+                android:scaleType="centerInside"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

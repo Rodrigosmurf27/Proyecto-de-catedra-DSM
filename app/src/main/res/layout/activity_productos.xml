@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    android:background="#f8fafc">
+
+    <!-- Header, igual estilo que en tus otras pantallas -->
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="2dp"
+        app:cardCornerRadius="0dp"
+        android:layout_marginBottom="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Productos"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                android:textColor="#1e293b"
+                android:layout_marginBottom="4dp"/>
+
+            <TextView
+                android:id="@+id/headerSubtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cargando productos..."
+                android:textSize="14sp"
+                android:textColor="#64748b"/>
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Contenido principal ocupa el resto (como en activity_main) -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="visible"
+            android:indeterminateTint="#6366f1"/>
+
+        <!-- Lista -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewProductos"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:paddingTop="15dp"
+            android:paddingBottom="96dp"
+            android:clipToPadding="false"
+            android:visibility="gone"/>
+
+        <!-- Empty state -->
+        <LinearLayout
+            android:id="@+id/emptyStateLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="40dp"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="📦"
+                android:textSize="64sp"
+                android:layout_marginBottom="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No hay productos"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#1e293b"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Los productos aparecerán aquí cuando estén disponibles"
+                android:textSize="14sp"
+                android:textColor="#64748b"
+                android:textAlignment="center"/>
+        </LinearLayout>
+
+    </FrameLayout>
+
+    <!-- Línea divisoria opcional arriba del menú -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/border_color" />
+
+    <!-- Menú inferior (mismo que en activity_main) -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="67dp"
+        android:background="@color/surface_color"
+        android:elevation="8dp"
+        app:itemIconTint="@color/bottom_navigation_item_color"
+        app:itemRippleColor="@color/indicator_color"
+        app:itemTextColor="@color/bottom_navigation_item_color"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/menu_bottom_navigation" />
+
+</LinearLayout>

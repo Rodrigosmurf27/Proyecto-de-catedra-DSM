@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Colores principales de Venmol -->
+    <color name="pink_primary">#E91E63</color>
+    <color name="pink_dark">#C2185B</color>
+    <color name="pink_light">#F8BBD9</color>
+    <color name="pink_accent">#FF4081</color>
+
+    <!-- Colores de fondo -->
+    <color name="background_primary">#FAFAFA</color>
+    <color name="background_secondary">#FFFFFF</color>
+
+    <!-- Colores de texto -->
+    <color name="text_primary">#212121</color>
+    <color name="text_secondary">#757575</color>
+    <color name="gray_secondary">#9E9E9E</color>
+
+    <!-- Colores adicionales -->
+    <color name="white">#FFFFFF</color>
+    <color name="light_gray">#F5F5F5</color>
+    <color name="divider_color">#BDBDBD</color>
+
+    <!-- Gradiente -->
+    <color name="gradient_start">#FCE4EC</color>
+    <color name="gradient_end">#F3E5F5</color>
+    <color name="black">#FF000000</color>
+
+
+    <!-- Nuevos colores para el menu -->
+    <color name="primary_color">#6366f1</color>
+    <color name="secondary_color">#64748b</color>
+    <color name="background_light">#f8fafc</color>
+    <color name="surface_color">#ffffff</color>
+    <color name="border_color">#e2e8f0</color>
+    <color name="indicator_color">#e0e7ff</color>
+
+    <color name="bottom_nav_indicator_color">@color/indicator_color</color>
+</resources>

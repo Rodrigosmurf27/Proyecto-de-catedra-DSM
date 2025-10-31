@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    app:cardElevation="4dp"
+    app:cardCornerRadius="16dp"
+    android:fitsSystemWindows="true"
+    android:foreground="?android:attr/selectableItemBackground">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="12dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/clienteAvatar"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/cliente_avatar_bg"
+                    android:text="A"
+                    android:textColor="@android:color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_marginEnd="12dp"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/clienteName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Cliente"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="#1e293b"
+                        android:layout_marginBottom="2dp"/>
+
+                    <TextView
+                        android:id="@+id/fechaText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="01 Ene"
+                        android:textSize="12sp"
+                        android:textColor="#64748b"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/estadoBadge"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:background="@drawable/estado_completada_bg"
+                android:text="✓"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:gravity="center"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#f1f5f9"
+            android:layout_marginBottom="12dp"/>
+
+        <TextView
+            android:id="@+id/productoName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Producto"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#1e293b"
+            android:layout_marginBottom="4dp"/>
+
+        <TextView
+            android:id="@+id/marcaText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Marca"
+            android:textSize="14sp"
+            android:textColor="#6366f1"
+            android:textStyle="bold"
+            android:layout_marginBottom="12dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/cantidadText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Cantidad: 0"
+                android:textSize="14sp"
+                android:textColor="#64748b"/>
+
+            <TextView
+                android:id="@+id/totalText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="$0.00"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#059669"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

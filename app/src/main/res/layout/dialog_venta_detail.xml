@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f8fafc"
+    android:fitsSystemWindows="true"
+    android:padding="20dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="20dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Detalle de Venta"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#1e293b"/>
+
+            <ImageButton
+                android:id="@+id/closeButton"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:background="@drawable/close_button_bg"
+                android:src="@drawable/ic_close"
+                android:contentDescription="Cerrar"
+                android:scaleType="centerInside"/>
+
+        </LinearLayout>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardElevation="8dp"
+            app:cardCornerRadius="24dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="24dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_marginBottom="24dp">
+
+                    <TextView
+                        android:id="@+id/clienteAvatar"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/cliente_avatar_large_bg"
+                        android:text="A"
+                        android:textColor="@android:color/white"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        android:layout_marginBottom="12dp"/>
+
+                    <TextView
+                        android:id="@+id/clienteName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Cliente"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:textColor="#1e293b"/>
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Producto"
+                    android:textSize="14sp"
+                    android:textColor="#64748b"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="4dp"/>
+
+                <TextView
+                    android:id="@+id/productoText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Nombre del Producto"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#1e293b"
+                    android:layout_marginBottom="16dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Marca"
+                    android:textSize="14sp"
+                    android:textColor="#64748b"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="4dp"/>
+
+                <TextView
+                    android:id="@+id/marcaText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Marca del Producto"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#1e293b"
+                    android:layout_marginBottom="16dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="16dp">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Cantidad"
+                            android:textSize="14sp"
+                            android:textColor="#64748b"
+                            android:textStyle="bold"
+                            android:layout_marginBottom="4dp"/>
+
+                        <TextView
+                            android:id="@+id/cantidadText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:textColor="#1e293b"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Precio Unitario"
+                            android:textSize="14sp"
+                            android:textColor="#64748b"
+                            android:textStyle="bold"
+                            android:layout_marginBottom="4dp"/>
+
+                        <TextView
+                            android:id="@+id/precioUnitarioText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="$0.00"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:textColor="#1e293b"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="16dp"
+                    app:cardBackgroundColor="#f8fafc"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="0dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp"
+                        android:gravity="center">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Total"
+                            android:textSize="14sp"
+                            android:textColor="#64748b"
+                            android:textStyle="bold"
+                            android:layout_marginBottom="4dp"/>
+
+                        <TextView
+                            android:id="@+id/totalText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="$0.00"
+                            android:textSize="24sp"
+                            android:textStyle="bold"
+                            android:textColor="#059669"/>
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Fecha de Venta"
+                        android:textSize="14sp"
+                        android:textColor="#64748b"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="4dp"/>
+
+                    <TextView
+                        android:id="@+id/fechaText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="01 Enero 2024"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="#1e293b"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+
+</ScrollView>

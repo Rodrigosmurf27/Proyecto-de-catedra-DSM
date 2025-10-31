@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fitsSystemWindows="true"
+    android:padding="20dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Cliente -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cliente *"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#374151"
+            android:layout_marginBottom="8dp"/>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="2dp">
+
+            <Spinner
+                android:id="@+id/clienteSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginHorizontal="12dp"/>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Producto -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Producto *"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#374151"
+            android:layout_marginBottom="8dp"/>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="2dp">
+
+            <Spinner
+                android:id="@+id/productoSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginHorizontal="12dp"/>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Cantidad -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:hint="Cantidad *"
+            app:boxStrokeColor="#6366f1"
+            app:hintTextColor="#6366f1">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/cantidadInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:maxLines="1"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Calcular Total -->
+        <Button
+            android:id="@+id/calcularButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Calcular Total"
+            android:backgroundTint="#6366f1"
+            android:layout_marginBottom="16dp"/>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardBackgroundColor="#f1f5f9"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Total a Pagar"
+                    android:textSize="14sp"
+                    android:textColor="#64748b"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="4dp"/>
+
+                <TextView
+                    android:id="@+id/totalText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="$0.00"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:textColor="#059669"
+                    android:visibility="gone"/>
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="* Campos requeridos"
+            android:textSize="12sp"
+            android:textColor="#64748b"
+            android:layout_marginTop="8dp"/>
+
+    </LinearLayout>
+
+</ScrollView>

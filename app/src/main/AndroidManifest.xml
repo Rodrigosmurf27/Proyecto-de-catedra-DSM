@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Permisos de red (Firebase/Auth/Firestore/Maps) -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <!-- <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/> -->
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Venmol"
+        tools:targetApi="31">
+
+        <!-- Clave de Google Maps (reemplaza el valor por tu API Key) -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyD_pry3g-_2XPNZoPcwedBgK6dqwOGaYIc"/>
+
+        <!-- Pantallas -->
+        <activity
+            android:name=".activities.SucursalesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.VentasActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.ClientesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.ProveedoresActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.ProductosActivity"
+            android:exported="false" />
+        <!-- BaseActivity NO se declara: no se inicia directamente -->
+        <activity
+            android:name=".activities.InventarioActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.RegisterActivity"
+            android:exported="false" />
+
+        <!-- Login: ÚNICA actividad con MAIN/LAUNCHER -->
+        <activity
+            android:name=".activities.LoginActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <!-- Main: sin intent-filter; exported=true para poder lanzarla desde Android Studio -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true" />
+
+    </application>
+</manifest>

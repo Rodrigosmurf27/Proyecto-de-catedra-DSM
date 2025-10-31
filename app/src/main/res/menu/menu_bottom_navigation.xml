@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_home"
+        android:enabled="true"
+        android:icon="@drawable/ic_home"
+        android:title="Inicio"/>
+
+    <item
+        android:id="@+id/nav_inventario"
+        android:enabled="true"
+        android:icon="@drawable/ic_inventory"
+        android:title="Inventario"/>
+
+    <item
+        android:id="@+id/nav_productos"
+        android:enabled="true"
+        android:icon="@drawable/ic_products"
+        android:title="Productos"/>
+
+    <item
+        android:id="@+id/nav_proveedores"
+        android:enabled="true"
+        android:icon="@drawable/ic_suppliers"
+        android:title="Proveedores"/>
+
+    <item
+        android:id="@+id/nav_clientes"
+        android:enabled="true"
+        android:icon="@drawable/ic_clients"
+        android:title="Clientes"/>
+
+
+</menu>

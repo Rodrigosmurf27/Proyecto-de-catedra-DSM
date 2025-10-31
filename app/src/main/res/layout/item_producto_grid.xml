@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardElevation="4dp"
+    app:cardCornerRadius="16dp"
+    android:layout_margin="4dp"
+    android:fitsSystemWindows="true"
+    android:foreground="?android:attr/selectableItemBackground">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="140dp">
+
+            <ImageView
+                android:id="@+id/productImage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:background="#f1f5f9"/>
+
+            <TextView
+                android:id="@+id/priceOverlay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|end"
+                android:layout_margin="8dp"
+                android:background="@drawable/price_overlay_bg"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="4dp"
+                android:text="$0.00"
+                android:textColor="@android:color/white"
+                android:textSize="12sp"
+                android:textStyle="bold"/>
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="12dp">
+
+            <TextView
+                android:id="@+id/productName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nombre del Producto"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="#1e293b"
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:layout_marginBottom="4dp"/>
+
+            <TextView
+                android:id="@+id/productBrand"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Marca"
+                android:textSize="12sp"
+                android:textColor="#64748b"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:id="@+id/productPrice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="$0.00"
+                android:visibility="gone"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

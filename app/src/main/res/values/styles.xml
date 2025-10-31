@@ -1,0 +1,10 @@
+<resources>
+    <!-- Texto compacto para labels del BottomNav -->
+    <style name="BottomNavText" parent="TextAppearance.Material3.LabelMedium">
+        <item name="android:textSize">12sp</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:lineHeight">14sp</item>
+        <item name="lineHeight">14sp</item>
+        <item name="android:letterSpacing">0</item>
+    </style>
+</resources>
